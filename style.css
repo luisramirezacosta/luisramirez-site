@@ -421,6 +421,8 @@
 .stagger-children.is-visible > *:nth-child(2) { transition-delay: 0.06s; }
 .stagger-children.is-visible > *:nth-child(3) { transition-delay: 0.12s; }
 .stagger-children.is-visible > *:nth-child(4) { transition-delay: 0.18s; }
+.stagger-children.is-visible > *:nth-child(5) { transition-delay: 0.24s; }
+.stagger-children.is-visible > *:nth-child(6) { transition-delay: 0.30s; }
 
 /* No-JS fallback: show everything */
 @media (scripting: none) {
