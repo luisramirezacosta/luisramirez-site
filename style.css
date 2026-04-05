@@ -7,7 +7,8 @@
 
 :root {
   --bg:           #FFFFFF;
-  --surface:      #FAFAFA;
+  --color-bg:     #FFFFFF;
+  --surface:      #F5F5F5;
   --card:         #FFFFFF;
   --border:       #E5E5E5;
   --border-hover: #CCCCCC;
@@ -26,6 +27,7 @@
 
 [data-theme="dark"] {
   --bg:           #0A0A0A;
+  --color-bg:     #0A0A0A;
   --surface:      #111111;
   --card:         #161616;
   --border:       #262626;
