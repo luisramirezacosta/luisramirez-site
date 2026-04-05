@@ -158,7 +158,7 @@ a { color: inherit; text-decoration: none; }
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   position: relative; text-align: left;
-  padding: 80px 24px 60px;
+  padding: 60px 24px 60px;
 }
 
 .hero > .col { width: 100%; }
@@ -413,9 +413,34 @@ a { color: inherit; text-decoration: none; }
   color: var(--text); padding: 10px 14px;
   background: var(--card); border: 1px solid var(--border);
   border-radius: 8px; text-align: center;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
   transition: all 180ms var(--ease);
 }
 .stack-item:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+[data-theme="dark"] .stack-item:hover { background: #1A1A18; }
+
+.stack-icon { width: 14px; height: 14px; flex-shrink: 0; opacity: 0.5; }
+
+/* Proof lines */
+.spec-proof {
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--text-faint); font-style: italic;
+  margin-top: 8px; line-height: 1.5;
+}
+
+/* Writing note */
+.writing-note {
+  font-family: var(--font-body); font-size: 13px;
+  color: var(--text-faint); font-style: italic;
+  margin-bottom: 24px;
+}
+
+/* Newsletter bilingual */
+.newsletter-sub-en {
+  font-family: var(--font-body); font-size: 13px;
+  color: var(--text-faint); font-style: italic;
+  margin: -16px 0 24px;
+}
 
 /* ============================================
    WORK
