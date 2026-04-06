@@ -413,44 +413,29 @@ a { color: inherit; text-decoration: none; }
    GSAP ANIMATION INITIAL STATES
    ============================================ */
 
-/* Hero entrance */
 .hero-anim { opacity: 0; transform: translateY(30px); }
 
-/* About */
-#about [data-animate] { opacity: 0; transform: translateY(30px); }
+/* About: fade up */
+#about [data-animate] { opacity: 0; transform: translateY(24px); }
 
-/* Setup — hardware: cinematic scale on desktop */
-.hw-image[data-animate] { opacity: 0; transform: scale(0.88) translateY(40px); }
-.hw-name[data-animate] { opacity: 0; transform: translateX(24px); }
-.hw-tagline[data-animate] { opacity: 0; transform: translateX(16px); }
-.hw-specs[data-animate] { opacity: 0; }
+/* Setup hardware: scale + fade */
+.hw-image[data-animate] { opacity: 0; transform: scale(0.95) translateY(30px); }
+.hw-name[data-animate], .hw-tagline[data-animate], .hw-specs[data-animate] { opacity: 0; transform: translateX(20px); }
 .setup-intro[data-animate] { opacity: 0; transform: translateY(20px); }
 
-/* Setup — cards: pop with scale */
-.ai-card[data-animate] { opacity: 0; transform: translateY(24px) scale(0.94); }
-.logo-card[data-animate] { opacity: 0; transform: translateY(16px) scale(0.95); }
+/* Setup grids: pop in */
+.logo-card[data-animate], .ai-card[data-animate] { opacity: 0; transform: translateY(20px) scale(0.97); }
 .subsection-label[data-animate] { opacity: 0; transform: translateY(12px); }
 
-/* Work */
-.work-card[data-animate] { opacity: 0; transform: translateY(36px) rotate(0.5deg); }
+/* Work: slide up with slight rotation */
+.work-card[data-animate] { opacity: 0; transform: translateY(30px) rotate(0.5deg); }
 
 /* Writing: slide from left */
-#writing .article-item[data-animate] { opacity: 0; transform: translateX(-24px); }
-#writing .writing-note[data-animate] { opacity: 0; transform: translateX(-12px); }
+#writing .article-item[data-animate] { opacity: 0; transform: translateX(-20px); }
+#writing .writing-note[data-animate] { opacity: 0; transform: translateX(-10px); }
 
-/* Newsletter */
-#newsletter [data-animate] { opacity: 0; transform: translateY(24px); }
-
-/* Mobile: smaller transforms, no drama */
-@media (max-width: 767px) {
-  .hw-image[data-animate] { transform: scale(0.95) translateY(20px); }
-  .hw-name[data-animate], .hw-tagline[data-animate] { transform: translateY(12px); }
-  .ai-card[data-animate], .logo-card[data-animate] { transform: translateY(12px) scale(0.98); }
-  .work-card[data-animate] { transform: translateY(16px) rotate(0); }
-  #writing .article-item[data-animate] { transform: translateX(-12px); }
-  #about [data-animate] { transform: translateY(16px); }
-  #newsletter [data-animate] { transform: translateY(12px); }
-}
+/* Newsletter: simple fade up */
+#newsletter [data-animate] { opacity: 0; transform: translateY(20px); }
 
 /* ============================================
    ARTICLE PAGE COMPAT
