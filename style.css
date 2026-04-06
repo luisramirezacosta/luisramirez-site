@@ -518,7 +518,14 @@ a { color: inherit; text-decoration: none; }
    ============================================ */
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  .section-label { left: 20px; }
+  .section-label,
+  .section.visible .section-label {
+    position: static !important;
+    display: block; width: 100%; text-align: center;
+    margin-bottom: 32px;
+    opacity: 1 !important; transform: none !important;
+    top: auto; left: auto;
+  }
   .logo-grid-4 { grid-template-columns: repeat(3, 1fr); }
 }
 
@@ -558,12 +565,14 @@ a { color: inherit; text-decoration: none; }
   .location { margin-bottom: 28px; }
   .social-bar { margin-bottom: 20px; justify-content: center; }
 
-  /* Section labels: centered on top of each section */
-  .section-label {
-    position: static;
+  /* Section labels: centered above content, NOT absolute */
+  .section-label,
+  .section.visible .section-label {
+    position: static !important;
     display: block; width: 100%; text-align: center;
     margin-bottom: 32px;
-    opacity: 1; transform: none; top: auto; left: auto;
+    opacity: 1 !important; transform: none !important;
+    top: auto; left: auto;
     font-size: 12px;
   }
 
