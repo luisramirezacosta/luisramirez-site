@@ -10,12 +10,12 @@
 
   var PRICING = {
     infraestructura: {
-      estrategia: { base: 3500 },
+      estrategia: { base: 0 },
       web: {
-        landing: 6000,
-        estandar: 12000,
-        completo: 20000,
-        plataforma: 35000,
+        landing: 7000,
+        estandar: 13000,
+        completo: 21000,
+        plataforma: 36000,
         addons: {
           blog: 2500,
           citas: 1800,
@@ -27,33 +27,33 @@
         }
       },
       google: {
-        perfil_negocio: 1500,
-        workspace: 2000,
+        perfil_negocio: 2000,
+        workspace: 2500,
         workspace_per_user: 300,
         analytics: 1500,
-        ads_setup: 3000,
+        ads_setup: 3500,
         ads_budget_5k: 2000,
         ads_budget_10k: 3500,
         ads_budget_25k: 5000
       },
       crm: {
-        hubspot: 5500,
-        custom: 12000,
+        hubspot: 6000,
+        custom: 12500,
         secuencias_email: 2500,
         lead_scoring: 2000,
         dashboard: 2500
       },
       automatizacion: {
-        tools_2_3: 4500,
-        tools_4_6: 7500,
-        tools_7_plus: 12000,
+        tools_2_3: 5000,
+        tools_4_6: 8000,
+        tools_7_plus: 12500,
         flujo_formulario: 2000,
         agenda: 1500,
         facturacion: 2500,
         notificaciones: 1500
       },
       contenido: {
-        por_canal: 1500,
+        por_canal: 2000,
         calendario: 2000,
         estrategia_doc: 3000,
         creacion_even: 5500,
@@ -757,11 +757,11 @@
     var items = [];
     var activeCount = countActiveModules();
 
-    // Strategy — always included, no visible price
+    // Strategy — free gift with every project
     items.push({
       name: 'Estrategia Digital & Hoja de Ruta',
-      detail: 'Incluido',
-      price: PRICING.infraestructura.estrategia.base,
+      detail: 'Cortesia',
+      price: 0,
       included: true
     });
 
@@ -881,7 +881,7 @@
       if (item.included) {
         html += '<div class="spec-row"><span class="spec-key">' + esc(item.name) + '</span>';
         html += '<span class="spec-dots"></span>';
-        html += '<span class="spec-val cfg-summary-included">Incluido</span></div>';
+        html += '<span class="spec-val cfg-summary-included">Cortes\u00eda</span></div>';
       } else {
         html += specRow(item.name, formatMXN(item.price));
       }
