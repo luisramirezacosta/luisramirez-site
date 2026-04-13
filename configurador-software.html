@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELK9HFM0W5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ELK9HFM0W5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Desarrollo Continuo de Software — Configurador</title>
+  <meta name="description" content="Configure su retainer de desarrollo de software a la medida. Herramientas internas, portales, dashboards y plataformas.">
+  <link rel="canonical" href="https://luisracosta.com/configurador-software.html">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="./vitruvian.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="configurador.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./configurador.html" class="back-link">&larr; Paquetes</a>
+      <nav class="header-nav">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Progress Bar -->
+  <div class="cfg-progress" aria-hidden="true">
+    <div class="cfg-progress-fill" id="cfg-progress-fill"></div>
+  </div>
+
+  <main class="site-wrapper">
+    <div class="cfg-stepper" id="stepper" data-package="software" data-total-steps="5">
+
+      <!-- ===== STEP 1: Sobre Su Negocio ===== -->
+      <section class="cfg-step cfg-step-active" data-step="1" data-step-id="discovery">
+        <div class="col-md">
+          <span class="cfg-step-label">01 / 05</span>
+          <h2 class="cfg-step-title">Sobre su negocio</h2>
+          <p class="cfg-step-desc">Entender su operación nos permite dimensionar el proyecto correctamente.</p>
+
+          <div class="cfg-field">
+            <label class="cfg-label" for="company-name">Nombre de la empresa</label>
+            <input type="text" id="company-name" class="cfg-input" data-field="companyName" placeholder="Ej. Grupo Meridiana" required>
+          </div>
+
+          <div class="cfg-field">
+            <label class="cfg-label" for="industry">Industria o sector</label>
+            <select id="industry" class="cfg-select" data-field="industry">
+              <option value="" disabled selected>Seleccione una opción</option>
+              <option value="Salud">Salud</option>
+              <option value="Restaurantes / Alimentos">Restaurantes / Alimentos</option>
+              <option value="Servicios Profesionales">Servicios Profesionales</option>
+              <option value="Comercio">Comercio</option>
+              <option value="Inmobiliaria">Inmobiliaria</option>
+              <option value="Educación">Educación</option>
+              <option value="Manufactura">Manufactura</option>
+              <option value="Tecnología">Tecnología</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="cfg-field">
+            <label class="cfg-label">Número de empleados</label>
+            <div class="cfg-radio-group" data-field="employees">
+              <div class="cfg-option">
+                <input type="radio" name="employees" id="emp-1-10" value="1-10">
+                <label for="emp-1-10" class="cfg-option-label"><span class="cfg-option-name">1–10</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="employees" id="emp-11-25" value="11-25">
+                <label for="emp-11-25" class="cfg-option-label"><span class="cfg-option-name">11–25</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="employees" id="emp-26-50" value="26-50">
+                <label for="emp-26-50" class="cfg-option-label"><span class="cfg-option-name">26–50</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="employees" id="emp-51-100" value="51-100">
+                <label for="emp-51-100" class="cfg-option-label"><span class="cfg-option-name">51–100</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="employees" id="emp-100" value="100+">
+                <label for="emp-100" class="cfg-option-label"><span class="cfg-option-name">100+</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="cfg-field">
+            <label class="cfg-label">Objetivo principal</label>
+            <div class="cfg-radio-group" data-field="goal">
+              <div class="cfg-option">
+                <input type="radio" name="goal" id="goal-internal" value="internal_tool">
+                <label for="goal-internal" class="cfg-option-label"><span class="cfg-option-name">Herramienta interna para el equipo</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="goal" id="goal-client" value="client_portal">
+                <label for="goal-client" class="cfg-option-label"><span class="cfg-option-name">Portal o plataforma para clientes</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="goal" id="goal-automate" value="automate_ops">
+                <label for="goal-automate" class="cfg-option-label"><span class="cfg-option-name">Automatizar operaciones internas</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="goal" id="goal-replace" value="replace_system">
+                <label for="goal-replace" class="cfg-option-label"><span class="cfg-option-name">Reemplazar sistema existente</span></label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== STEP 2: Tipo de Sistema ===== -->
+      <section class="cfg-step" data-step="2" data-step-id="system-type">
+        <div class="col-md">
+          <span class="cfg-step-label">02 / 05</span>
+          <h2 class="cfg-step-title">¿Qué tipo de sistema necesita?</h2>
+          <p class="cfg-step-desc">Esto nos ayuda a estimar el alcance y los recursos necesarios.</p>
+
+          <div class="cfg-field">
+            <label class="cfg-label">Tipo principal</label>
+            <div class="cfg-radio-group" data-field="system-type">
+              <div class="cfg-option">
+                <input type="radio" name="system-type" id="st-internal" value="internal_tool">
+                <label for="st-internal" class="cfg-option-label"><span class="cfg-option-name">Herramienta interna</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="system-type" id="st-portal" value="client_portal">
+                <label for="st-portal" class="cfg-option-label"><span class="cfg-option-name">Portal de clientes</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="system-type" id="st-dashboard" value="dashboard">
+                <label for="st-dashboard" class="cfg-option-label"><span class="cfg-option-name">Dashboard / reportes</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="system-type" id="st-platform" value="web_platform">
+                <label for="st-platform" class="cfg-option-label"><span class="cfg-option-name">Plataforma web</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="system-type" id="st-mobile" value="mobile_app">
+                <label for="st-mobile" class="cfg-option-label"><span class="cfg-option-name">App móvil</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="system-type" id="st-other" value="other">
+                <label for="st-other" class="cfg-option-label"><span class="cfg-option-name">Otro</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="cfg-field">
+            <label class="cfg-label" for="system-other">Si seleccionó "Otro", describa brevemente</label>
+            <input type="text" id="system-other" class="cfg-input" data-field="systemOther" placeholder="Ej. Integración entre sistemas">
+          </div>
+
+          <div class="cfg-field">
+            <label class="cfg-label">Complejidad estimada</label>
+            <div class="cfg-radio-group" data-field="complexity">
+              <div class="cfg-option">
+                <input type="radio" name="complexity" id="cx-simple" value="simple">
+                <label for="cx-simple" class="cfg-option-label">
+                  <span class="cfg-option-name">Simple</span>
+                  <span class="cfg-option-detail">Una herramienta enfocada en una tarea específica (1–2 semanas)</span>
+                </label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="complexity" id="cx-medium" value="medium">
+                <label for="cx-medium" class="cfg-option-label">
+                  <span class="cfg-option-name">Medio</span>
+                  <span class="cfg-option-detail">Sistema con varios módulos y flujos de trabajo (3–6 semanas)</span>
+                </label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="complexity" id="cx-complex" value="complex">
+                <label for="cx-complex" class="cfg-option-label">
+                  <span class="cfg-option-name">Complejo</span>
+                  <span class="cfg-option-detail">Plataforma completa con múltiples integraciones (2+ meses)</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== STEP 3: Alcance Técnico ===== -->
+      <section class="cfg-step" data-step="3" data-step-id="tech-scope">
+        <div class="col-md">
+          <span class="cfg-step-label">03 / 05</span>
+          <h2 class="cfg-step-title">Alcance técnico</h2>
+          <p class="cfg-step-desc">Estos detalles nos ayudan a dimensionar el proyecto correctamente.</p>
+
+          <div class="cfg-field">
+            <label class="cfg-label">Número estimado de usuarios</label>
+            <div class="cfg-radio-group" data-field="users">
+              <div class="cfg-option">
+                <input type="radio" name="users" id="users-1-10" value="1-10">
+                <label for="users-1-10" class="cfg-option-label"><span class="cfg-option-name">1–10</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="users" id="users-11-50" value="11-50">
+                <label for="users-11-50" class="cfg-option-label"><span class="cfg-option-name">11–50</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="users" id="users-51-200" value="51-200">
+                <label for="users-51-200" class="cfg-option-label"><span class="cfg-option-name">51–200</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="users" id="users-200" value="200+">
+                <label for="users-200" class="cfg-option-label"><span class="cfg-option-name">200+</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="cfg-field">
+            <label class="cfg-label">Funcionalidades requeridas</label>
+            <div class="cfg-check-group" data-field="features">
+              <div class="cfg-option">
+                <input type="checkbox" name="sw-feat" id="feat-auth" value="auth">
+                <label for="feat-auth" class="cfg-option-label"><span class="cfg-option-name">Autenticación de usuarios</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="checkbox" name="sw-feat" id="feat-roles" value="roles">
+                <label for="feat-roles" class="cfg-option-label"><span class="cfg-option-name">Roles y permisos (admin, editor, viewer)</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="checkbox" name="sw-feat" id="feat-admin" value="admin_panel">
+                <label for="feat-admin" class="cfg-option-label"><span class="cfg-option-name">Panel de administración</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="checkbox" name="sw-feat" id="feat-reports" value="reports">
+                <label for="feat-reports" class="cfg-option-label"><span class="cfg-option-name">Reportes / dashboards</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="checkbox" name="sw-feat" id="feat-notif" value="notifications">
+                <label for="feat-notif" class="cfg-option-label"><span class="cfg-option-name">Notificaciones (email / push)</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="checkbox" name="sw-feat" id="feat-upload" value="file_upload">
+                <label for="feat-upload" class="cfg-option-label"><span class="cfg-option-name">Carga de archivos / documentos</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="cfg-field">
+            <label class="cfg-label">Integraciones API</label>
+            <div class="cfg-check-group cfg-check-grid" data-field="integrations">
+              <div class="cfg-option">
+                <input type="checkbox" name="sw-integ" id="integ-stripe" value="stripe">
+                <label for="integ-stripe" class="cfg-option-label"><span class="cfg-option-name">Stripe / pagos</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="checkbox" name="sw-integ" id="integ-crm" value="crm">
+                <label for="integ-crm" class="cfg-option-label"><span class="cfg-option-name">CRM</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="checkbox" name="sw-integ" id="integ-google" value="google">
+                <label for="integ-google" class="cfg-option-label"><span class="cfg-option-name">Google</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="checkbox" name="sw-integ" id="integ-email" value="email">
+                <label for="integ-email" class="cfg-option-label"><span class="cfg-option-name">Email / SMTP</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="checkbox" name="sw-integ" id="integ-calendar" value="calendar">
+                <label for="integ-calendar" class="cfg-option-label"><span class="cfg-option-name">Calendario</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="checkbox" name="sw-integ" id="integ-whatsapp" value="whatsapp">
+                <label for="integ-whatsapp" class="cfg-option-label"><span class="cfg-option-name">WhatsApp</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="checkbox" name="sw-integ" id="integ-billing" value="billing">
+                <label for="integ-billing" class="cfg-option-label"><span class="cfg-option-name">Facturación</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="checkbox" name="sw-integ" id="integ-other" value="other">
+                <label for="integ-other" class="cfg-option-label"><span class="cfg-option-name">Otro</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="cfg-field">
+            <label class="cfg-label">Soporte móvil</label>
+            <div class="cfg-radio-group" data-field="mobile-support">
+              <div class="cfg-option">
+                <input type="radio" name="mobile-support" id="mob-desktop" value="desktop">
+                <label for="mob-desktop" class="cfg-option-label"><span class="cfg-option-name">Solo desktop</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="mobile-support" id="mob-responsive" value="responsive">
+                <label for="mob-responsive" class="cfg-option-label"><span class="cfg-option-name">Responsivo (web)</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="mobile-support" id="mob-native" value="native">
+                <label for="mob-native" class="cfg-option-label"><span class="cfg-option-name">App nativa</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="cfg-field">
+            <label class="cfg-label" for="project-desc">Descripción breve del proyecto (opcional)</label>
+            <textarea id="project-desc" class="cfg-input cfg-textarea" data-field="projectDesc" rows="3" placeholder="Ej. Portal donde nuestros clientes pueden ver el estatus de sus pedidos y descargar facturas."></textarea>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== STEP 4: Modelo de Trabajo ===== -->
+      <section class="cfg-step" data-step="4" data-step-id="work-model">
+        <div class="col-md">
+          <span class="cfg-step-label">04 / 05</span>
+          <h2 class="cfg-step-title">Modelo de trabajo</h2>
+          <p class="cfg-step-desc">Seleccione el nivel de dedicación que necesita su proyecto.</p>
+
+          <div class="cfg-field">
+            <label class="cfg-label">Retainer mensual</label>
+            <div class="cfg-radio-group" data-field="retainer">
+              <div class="cfg-option">
+                <input type="radio" name="retainer" id="ret-40" value="40h">
+                <label for="ret-40" class="cfg-option-label">
+                  <span class="cfg-option-name">40 horas / mes</span>
+                  <span class="cfg-option-detail">Para proyectos enfocados o mantenimiento activo</span>
+                </label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="retainer" id="ret-80" value="80h">
+                <label for="ret-80" class="cfg-option-label">
+                  <span class="cfg-option-name">80 horas / mes</span>
+                  <span class="cfg-option-detail">Para desarrollo constante con entregas semanales</span>
+                </label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="retainer" id="ret-120" value="120h">
+                <label for="ret-120" class="cfg-option-label">
+                  <span class="cfg-option-name">120 horas / mes</span>
+                  <span class="cfg-option-detail">Para proyectos urgentes o múltiples frentes simultáneos</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="cfg-field">
+            <label class="cfg-label">¿Cuándo le gustaría arrancar?</label>
+            <div class="cfg-radio-group" data-field="timeline">
+              <div class="cfg-option">
+                <input type="radio" name="timeline" id="tl-asap" value="asap">
+                <label for="tl-asap" class="cfg-option-label"><span class="cfg-option-name">Lo antes posible</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="timeline" id="tl-next" value="next_month">
+                <label for="tl-next" class="cfg-option-label"><span class="cfg-option-name">Próximo mes</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="timeline" id="tl-2-3m" value="2-3months">
+                <label for="tl-2-3m" class="cfg-option-label"><span class="cfg-option-name">En 2–3 meses</span></label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== STEP 5: Datos de Contacto + Resumen ===== -->
+      <section class="cfg-step" data-step="5" data-step-id="contact-summary">
+        <div class="col-wide">
+          <span class="cfg-step-label">05 / 05</span>
+          <h2 class="cfg-step-title">Su propuesta</h2>
+          <p class="cfg-step-desc">Complete sus datos y revise el resumen de su configuración.</p>
+
+          <div class="cfg-software-contact-summary">
+            <div class="cfg-software-contact">
+              <div class="cfg-field">
+                <label class="cfg-label" for="client-name">Nombre completo</label>
+                <input type="text" id="client-name" class="cfg-input" data-field="clientName" placeholder="Nombre y apellido" required>
+              </div>
+              <div class="cfg-field">
+                <label class="cfg-label" for="client-email">Email</label>
+                <input type="email" id="client-email" class="cfg-input" data-field="clientEmail" placeholder="correo@empresa.com" required>
+              </div>
+              <div class="cfg-field">
+                <label class="cfg-label" for="client-phone">Teléfono</label>
+                <input type="tel" id="client-phone" class="cfg-input" data-field="clientPhone" placeholder="+52 999 123 4567">
+              </div>
+            </div>
+
+            <div id="cfg-summary">
+              <!-- Dynamically rendered by configurador.js -->
+            </div>
+          </div>
+
+          <div class="cfg-actions">
+            <button class="btn btn-primary" id="cfg-download-pdf">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Descargar Propuesta (PDF)
+            </button>
+            <button class="btn btn-secondary" id="cfg-pay">
+              Proceder al Pago
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Navigation Bar -->
+  <div class="cfg-nav" id="cfg-nav">
+    <div class="cfg-nav-inner">
+      <button class="btn btn-secondary" id="cfg-back" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Atrás
+      </button>
+      <button class="btn btn-primary" id="cfg-next">
+        Siguiente
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- PDF Template (hidden, rendered by html2canvas) -->
+  <div class="cfg-pdf-template" id="pdf-template" aria-hidden="true">
+    <!-- Populated dynamically by configurador.js -->
+  </div>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4/dist/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5/dist/jspdf.umd.min.js"></script>
+  <script src="app.js" defer></script>
+  <script src="configurador.js" defer></script>
+</body>
+</html>

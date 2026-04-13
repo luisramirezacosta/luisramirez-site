@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELK9HFM0W5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ELK9HFM0W5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Infraestructura Digital — Configurador</title>
+  <meta name="description" content="Configure su paquete de infraestructura digital empresarial. Estrategia, web, Google, CRM, automatización y contenido.">
+  <link rel="canonical" href="https://luisracosta.com/configurador-infraestructura.html">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="./vitruvian.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="configurador.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./configurador.html" class="back-link">&larr; Paquetes</a>
+      <nav class="header-nav">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Progress Bar -->
+  <div class="cfg-progress" aria-hidden="true">
+    <div class="cfg-progress-fill" id="cfg-progress-fill"></div>
+  </div>
+
+  <main class="site-wrapper">
+    <div class="cfg-stepper" id="stepper" data-package="infraestructura" data-total-steps="5">
+
+      <!-- ===== STEP 1: Sobre Su Negocio ===== -->
+      <section class="cfg-step cfg-step-active" data-step="1" data-step-id="discovery">
+        <div class="col-md">
+          <span class="cfg-step-label">01 / 05</span>
+          <h2 class="cfg-step-title">Sobre su negocio</h2>
+          <p class="cfg-step-desc">Entender su operación nos permite recomendar exactamente lo que necesita.</p>
+
+          <div class="cfg-field">
+            <label class="cfg-label" for="company-name">Nombre de la empresa</label>
+            <input type="text" id="company-name" class="cfg-input" data-field="companyName" placeholder="Ej. Grupo Meridiana" required>
+          </div>
+
+          <div class="cfg-field">
+            <label class="cfg-label" for="industry">Industria o sector</label>
+            <select id="industry" class="cfg-select" data-field="industry" required>
+              <option value="" disabled selected>Seleccione una opción</option>
+              <option value="salud">Salud</option>
+              <option value="restaurantes">Restaurantes / Alimentos</option>
+              <option value="servicios">Servicios Profesionales</option>
+              <option value="comercio">Comercio</option>
+              <option value="inmobiliaria">Inmobiliaria</option>
+              <option value="educacion">Educación</option>
+              <option value="manufactura">Manufactura</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="cfg-field">
+            <label class="cfg-label">Número de empleados</label>
+            <div class="cfg-radio-group cfg-radio-group--grid" data-field="employees">
+              <div class="cfg-option">
+                <input type="radio" name="employees" id="emp-1-10" value="1-10">
+                <label for="emp-1-10" class="cfg-option-label">
+                  <span class="cfg-option-name">1–10</span>
+                </label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="employees" id="emp-11-25" value="11-25">
+                <label for="emp-11-25" class="cfg-option-label">
+                  <span class="cfg-option-name">11–25</span>
+                </label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="employees" id="emp-26-50" value="26-50">
+                <label for="emp-26-50" class="cfg-option-label">
+                  <span class="cfg-option-name">26–50</span>
+                </label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="employees" id="emp-51-100" value="51-100">
+                <label for="emp-51-100" class="cfg-option-label">
+                  <span class="cfg-option-name">51–100</span>
+                </label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="employees" id="emp-100" value="100+">
+                <label for="emp-100" class="cfg-option-label">
+                  <span class="cfg-option-name">100+</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="cfg-field">
+            <label class="cfg-label">Presencia digital actual</label>
+            <div class="cfg-check-group cfg-check-grid" data-field="currentPresence">
+              <div class="cfg-option">
+                <input type="checkbox" name="presence" id="pres-web" value="website">
+                <label for="pres-web" class="cfg-option-label">
+                  <span class="cfg-option-name">Sitio web</span>
+                </label>
+              </div>
+              <div class="cfg-option">
+                <input type="checkbox" name="presence" id="pres-social" value="social">
+                <label for="pres-social" class="cfg-option-label">
+                  <span class="cfg-option-name">Redes sociales</span>
+                </label>
+              </div>
+              <div class="cfg-option">
+                <input type="checkbox" name="presence" id="pres-gbp" value="gbp">
+                <label for="pres-gbp" class="cfg-option-label">
+                  <span class="cfg-option-name">Google Business</span>
+                </label>
+              </div>
+              <div class="cfg-option">
+                <input type="checkbox" name="presence" id="pres-crm" value="crm">
+                <label for="pres-crm" class="cfg-option-label">
+                  <span class="cfg-option-name">CRM</span>
+                </label>
+              </div>
+              <div class="cfg-option">
+                <input type="checkbox" name="presence" id="pres-email" value="email">
+                <label for="pres-email" class="cfg-option-label">
+                  <span class="cfg-option-name">Correo profesional</span>
+                </label>
+              </div>
+              <div class="cfg-option">
+                <input type="checkbox" name="presence" id="pres-booking" value="booking">
+                <label for="pres-booking" class="cfg-option-label">
+                  <span class="cfg-option-name">Sistema de citas</span>
+                </label>
+              </div>
+              <div class="cfg-option">
+                <input type="checkbox" name="presence" id="pres-none" value="none">
+                <label for="pres-none" class="cfg-option-label">
+                  <span class="cfg-option-name">Ninguno</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="cfg-field">
+            <label class="cfg-label">Objetivo principal</label>
+            <div class="cfg-radio-group" data-field="goal">
+              <div class="cfg-option">
+                <input type="radio" name="goal" id="goal-clients" value="clients">
+                <label for="goal-clients" class="cfg-option-label">
+                  <span class="cfg-option-name">Generar más clientes</span>
+                </label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="goal" id="goal-ops" value="operations">
+                <label for="goal-ops" class="cfg-option-label">
+                  <span class="cfg-option-name">Organizar operaciones</span>
+                </label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="goal" id="goal-presence" value="presence">
+                <label for="goal-presence" class="cfg-option-label">
+                  <span class="cfg-option-name">Profesionalizar presencia digital</span>
+                </label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="goal" id="goal-automate" value="automate">
+                <label for="goal-automate" class="cfg-option-label">
+                  <span class="cfg-option-name">Automatizar tareas repetitivas</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== STEP 2: Configuración de Servicios ===== -->
+      <section class="cfg-step" data-step="2" data-step-id="modules">
+        <div class="col-wide">
+          <span class="cfg-step-label">02 / 05</span>
+          <h2 class="cfg-step-title">¿Qué necesita su negocio?</h2>
+          <p class="cfg-step-desc">Seleccione los módulos que desea incluir. La estrategia digital está incluida como base de todo proyecto.</p>
+
+          <div class="cfg-modules">
+
+            <!-- Strategy (locked) -->
+            <div class="cfg-module cfg-module-locked">
+              <div class="cfg-module-header">
+                <div class="cfg-module-info">
+                  <div class="cfg-module-name">Estrategia Digital &amp; Hoja de Ruta</div>
+                  <div class="cfg-module-time">1–2 semanas</div>
+                </div>
+                <span class="cfg-module-badge">Incluido</span>
+              </div>
+            </div>
+
+            <!-- Web -->
+            <div class="cfg-module" data-module="web">
+              <div class="cfg-module-header">
+                <div class="cfg-module-info">
+                  <div class="cfg-module-name">Diseño &amp; Desarrollo Web</div>
+                  <div class="cfg-module-time">2–4 semanas</div>
+                </div>
+                <button class="cfg-toggle" data-toggle="web" aria-pressed="false" aria-label="Activar módulo web">
+                  <span class="cfg-toggle-track"><span class="cfg-toggle-thumb"></span></span>
+                </button>
+              </div>
+              <div class="cfg-suboptions" data-suboptions="web" hidden>
+                <div class="cfg-suboption-group">
+                  <span class="cfg-suboption-label">Páginas</span>
+                  <div class="cfg-radio-group" data-field="web-pages">
+                    <div class="cfg-option">
+                      <input type="radio" name="web-pages" id="web-landing" value="landing">
+                      <label for="web-landing" class="cfg-option-label">
+                        <span class="cfg-option-name">Landing page</span>
+                        <span class="cfg-option-meta">1 página</span>
+                      </label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="radio" name="web-pages" id="web-estandar" value="estandar">
+                      <label for="web-estandar" class="cfg-option-label">
+                        <span class="cfg-option-name">Sitio estándar</span>
+                        <span class="cfg-option-meta">3–5 páginas</span>
+                      </label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="radio" name="web-pages" id="web-completo" value="completo">
+                      <label for="web-completo" class="cfg-option-label">
+                        <span class="cfg-option-name">Sitio completo</span>
+                        <span class="cfg-option-meta">6–10 páginas</span>
+                      </label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="radio" name="web-pages" id="web-plataforma" value="plataforma">
+                      <label for="web-plataforma" class="cfg-option-label">
+                        <span class="cfg-option-name">Plataforma</span>
+                        <span class="cfg-option-meta">10+ páginas</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="cfg-suboption-group">
+                  <span class="cfg-suboption-label">Funcionalidades adicionales</span>
+                  <div class="cfg-check-group" data-field="web-addons">
+                    <div class="cfg-option">
+                      <input type="checkbox" name="web-addons" id="web-blog" value="blog">
+                      <label for="web-blog" class="cfg-option-label"><span class="cfg-option-name">Blog</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="checkbox" name="web-addons" id="web-citas" value="citas">
+                      <label for="web-citas" class="cfg-option-label"><span class="cfg-option-name">Sistema de citas (Cal.com)</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="checkbox" name="web-addons" id="web-galeria" value="galeria">
+                      <label for="web-galeria" class="cfg-option-label"><span class="cfg-option-name">Galería / portafolio</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="checkbox" name="web-addons" id="web-form-crm" value="formulario_crm">
+                      <label for="web-form-crm" class="cfg-option-label"><span class="cfg-option-name">Formulario + integración CRM</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="checkbox" name="web-addons" id="web-foto" value="fotografia">
+                      <label for="web-foto" class="cfg-option-label"><span class="cfg-option-name">Fotografía profesional</span></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="cfg-suboption-group">
+                  <span class="cfg-suboption-label">Copywriting</span>
+                  <div class="cfg-radio-group" data-field="web-copy">
+                    <div class="cfg-option">
+                      <input type="radio" name="web-copy" id="web-copy-client" value="client">
+                      <label for="web-copy-client" class="cfg-option-label"><span class="cfg-option-name">El cliente provee los textos</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="radio" name="web-copy" id="web-copy-even" value="even">
+                      <label for="web-copy-even" class="cfg-option-label"><span class="cfg-option-name">EVEN redacta los textos</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="radio" name="web-copy" id="web-copy-bilingual" value="bilingue">
+                      <label for="web-copy-bilingual" class="cfg-option-label"><span class="cfg-option-name">Bilingüe (español + inglés)</span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Google -->
+            <div class="cfg-module" data-module="google">
+              <div class="cfg-module-header">
+                <div class="cfg-module-info">
+                  <div class="cfg-module-name">Ecosistema Google</div>
+                  <div class="cfg-module-time">1–2 semanas</div>
+                </div>
+                <button class="cfg-toggle" data-toggle="google" aria-pressed="false" aria-label="Activar módulo Google">
+                  <span class="cfg-toggle-track"><span class="cfg-toggle-thumb"></span></span>
+                </button>
+              </div>
+              <div class="cfg-suboptions" data-suboptions="google" hidden>
+                <div class="cfg-suboption-group">
+                  <span class="cfg-suboption-label">Servicios</span>
+                  <div class="cfg-check-group" data-field="google-services">
+                    <div class="cfg-option">
+                      <input type="checkbox" name="google-svc" id="google-gbp" value="perfil_negocio">
+                      <label for="google-gbp" class="cfg-option-label"><span class="cfg-option-name">Google Business Profile</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="checkbox" name="google-svc" id="google-workspace" value="workspace">
+                      <label for="google-workspace" class="cfg-option-label"><span class="cfg-option-name">Google Workspace (correo profesional)</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="checkbox" name="google-svc" id="google-analytics" value="analytics">
+                      <label for="google-analytics" class="cfg-option-label"><span class="cfg-option-name">Analytics + Search Console</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="checkbox" name="google-svc" id="google-ads" value="ads">
+                      <label for="google-ads" class="cfg-option-label"><span class="cfg-option-name">Google Ads + primera campaña</span></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="cfg-suboption-group" data-conditional="google-workspace">
+                  <span class="cfg-suboption-label">Usuarios de Workspace</span>
+                  <div class="cfg-stepper-input">
+                    <button class="cfg-stepper-btn" data-stepper="google-users" data-dir="-1" aria-label="Menos">−</button>
+                    <input type="text" class="cfg-stepper-value" id="google-users" data-field="google-users" value="5" readonly>
+                    <button class="cfg-stepper-btn" data-stepper="google-users" data-dir="1" aria-label="Más">+</button>
+                  </div>
+                </div>
+                <div class="cfg-suboption-group" data-conditional="google-ads">
+                  <span class="cfg-suboption-label">Presupuesto mensual de Ads</span>
+                  <div class="cfg-radio-group" data-field="google-ads-budget">
+                    <div class="cfg-option">
+                      <input type="radio" name="google-ads-budget" id="ads-5k" value="5k">
+                      <label for="ads-5k" class="cfg-option-label"><span class="cfg-option-name">$5,000 – $10,000 MXN</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="radio" name="google-ads-budget" id="ads-10k" value="10k">
+                      <label for="ads-10k" class="cfg-option-label"><span class="cfg-option-name">$10,000 – $25,000 MXN</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="radio" name="google-ads-budget" id="ads-25k" value="25k">
+                      <label for="ads-25k" class="cfg-option-label"><span class="cfg-option-name">$25,000+ MXN</span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CRM -->
+            <div class="cfg-module" data-module="crm">
+              <div class="cfg-module-header">
+                <div class="cfg-module-info">
+                  <div class="cfg-module-name">CRM &amp; Pipeline de Clientes</div>
+                  <div class="cfg-module-time">1–3 semanas</div>
+                </div>
+                <button class="cfg-toggle" data-toggle="crm" aria-pressed="false" aria-label="Activar módulo CRM">
+                  <span class="cfg-toggle-track"><span class="cfg-toggle-thumb"></span></span>
+                </button>
+              </div>
+              <div class="cfg-suboptions" data-suboptions="crm" hidden>
+                <div class="cfg-suboption-group">
+                  <span class="cfg-suboption-label">Plataforma</span>
+                  <div class="cfg-radio-group" data-field="crm-platform">
+                    <div class="cfg-option">
+                      <input type="radio" name="crm-platform" id="crm-hubspot" value="hubspot">
+                      <label for="crm-hubspot" class="cfg-option-label"><span class="cfg-option-name">HubSpot</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="radio" name="crm-platform" id="crm-custom" value="custom">
+                      <label for="crm-custom" class="cfg-option-label"><span class="cfg-option-name">A la medida</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="radio" name="crm-platform" id="crm-unsure" value="unsure">
+                      <label for="crm-unsure" class="cfg-option-label"><span class="cfg-option-name">No estoy seguro</span></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="cfg-suboption-group">
+                  <span class="cfg-suboption-label">Equipo de ventas</span>
+                  <div class="cfg-stepper-input">
+                    <button class="cfg-stepper-btn" data-stepper="crm-users" data-dir="-1" aria-label="Menos">−</button>
+                    <input type="text" class="cfg-stepper-value" id="crm-users" data-field="crm-users" value="3" readonly>
+                    <button class="cfg-stepper-btn" data-stepper="crm-users" data-dir="1" aria-label="Más">+</button>
+                  </div>
+                </div>
+                <div class="cfg-suboption-group">
+                  <span class="cfg-suboption-label">Funcionalidades</span>
+                  <div class="cfg-check-group" data-field="crm-features">
+                    <div class="cfg-option">
+                      <input type="checkbox" name="crm-feat" id="crm-sequences" value="secuencias_email">
+                      <label for="crm-sequences" class="cfg-option-label"><span class="cfg-option-name">Secuencias automáticas de email</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="checkbox" name="crm-feat" id="crm-scoring" value="lead_scoring">
+                      <label for="crm-scoring" class="cfg-option-label"><span class="cfg-option-name">Lead scoring</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="checkbox" name="crm-feat" id="crm-dashboard" value="dashboard">
+                      <label for="crm-dashboard" class="cfg-option-label"><span class="cfg-option-name">Dashboard de pipeline</span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Automation -->
+            <div class="cfg-module" data-module="automatizacion">
+              <div class="cfg-module-header">
+                <div class="cfg-module-info">
+                  <div class="cfg-module-name">Automatización &amp; Flujos de Trabajo</div>
+                  <div class="cfg-module-time">1–2 semanas</div>
+                </div>
+                <button class="cfg-toggle" data-toggle="automatizacion" aria-pressed="false" aria-label="Activar módulo automatización">
+                  <span class="cfg-toggle-track"><span class="cfg-toggle-thumb"></span></span>
+                </button>
+              </div>
+              <div class="cfg-suboptions" data-suboptions="automatizacion" hidden>
+                <div class="cfg-suboption-group">
+                  <span class="cfg-suboption-label">Herramientas a conectar</span>
+                  <div class="cfg-radio-group" data-field="auto-tools">
+                    <div class="cfg-option">
+                      <input type="radio" name="auto-tools" id="auto-2-3" value="2-3">
+                      <label for="auto-2-3" class="cfg-option-label"><span class="cfg-option-name">2–3 herramientas</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="radio" name="auto-tools" id="auto-4-6" value="4-6">
+                      <label for="auto-4-6" class="cfg-option-label"><span class="cfg-option-name">4–6 herramientas</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="radio" name="auto-tools" id="auto-7" value="7+">
+                      <label for="auto-7" class="cfg-option-label"><span class="cfg-option-name">7+ herramientas</span></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="cfg-suboption-group">
+                  <span class="cfg-suboption-label">Flujos</span>
+                  <div class="cfg-check-group" data-field="auto-flows">
+                    <div class="cfg-option">
+                      <input type="checkbox" name="auto-flow" id="auto-form" value="flujo_formulario">
+                      <label for="auto-form" class="cfg-option-label"><span class="cfg-option-name">Formulario → CRM → email</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="checkbox" name="auto-flow" id="auto-booking" value="agenda">
+                      <label for="auto-booking" class="cfg-option-label"><span class="cfg-option-name">Automatización de agenda</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="checkbox" name="auto-flow" id="auto-invoice" value="facturacion">
+                      <label for="auto-invoice" class="cfg-option-label"><span class="cfg-option-name">Facturación / pagos</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="checkbox" name="auto-flow" id="auto-notif" value="notificaciones">
+                      <label for="auto-notif" class="cfg-option-label"><span class="cfg-option-name">Notificaciones personalizadas</span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="cfg-module" data-module="contenido">
+              <div class="cfg-module-header">
+                <div class="cfg-module-info">
+                  <div class="cfg-module-name">Redes Sociales &amp; Contenido</div>
+                  <div class="cfg-module-time">2–3 semanas</div>
+                </div>
+                <button class="cfg-toggle" data-toggle="contenido" aria-pressed="false" aria-label="Activar módulo contenido">
+                  <span class="cfg-toggle-track"><span class="cfg-toggle-thumb"></span></span>
+                </button>
+              </div>
+              <div class="cfg-suboptions" data-suboptions="contenido" hidden>
+                <div class="cfg-suboption-group">
+                  <span class="cfg-suboption-label">Canales</span>
+                  <div class="cfg-check-group cfg-check-grid" data-field="content-channels">
+                    <div class="cfg-option">
+                      <input type="checkbox" name="content-ch" id="ch-ig" value="instagram">
+                      <label for="ch-ig" class="cfg-option-label"><span class="cfg-option-name">Instagram</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="checkbox" name="content-ch" id="ch-fb" value="facebook">
+                      <label for="ch-fb" class="cfg-option-label"><span class="cfg-option-name">Facebook</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="checkbox" name="content-ch" id="ch-li" value="linkedin">
+                      <label for="ch-li" class="cfg-option-label"><span class="cfg-option-name">LinkedIn</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="checkbox" name="content-ch" id="ch-tt" value="tiktok">
+                      <label for="ch-tt" class="cfg-option-label"><span class="cfg-option-name">TikTok</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="checkbox" name="content-ch" id="ch-yt" value="youtube">
+                      <label for="ch-yt" class="cfg-option-label"><span class="cfg-option-name">YouTube</span></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="cfg-suboption-group">
+                  <span class="cfg-suboption-label">Entregables</span>
+                  <div class="cfg-check-group" data-field="content-deliverables">
+                    <div class="cfg-option">
+                      <input type="checkbox" name="content-del" id="content-cal" value="calendario">
+                      <label for="content-cal" class="cfg-option-label"><span class="cfg-option-name">Calendario de contenido</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="checkbox" name="content-del" id="content-strat" value="estrategia_doc">
+                      <label for="content-strat" class="cfg-option-label"><span class="cfg-option-name">Documento de estrategia</span></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="cfg-suboption-group">
+                  <span class="cfg-suboption-label">Creación de contenido</span>
+                  <div class="cfg-radio-group" data-field="content-creation">
+                    <div class="cfg-option">
+                      <input type="radio" name="content-creation" id="cc-client" value="client">
+                      <label for="cc-client" class="cfg-option-label"><span class="cfg-option-name">El cliente crea el contenido</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="radio" name="content-creation" id="cc-even" value="even">
+                      <label for="cc-even" class="cfg-option-label"><span class="cfg-option-name">EVEN crea el contenido</span></label>
+                    </div>
+                    <div class="cfg-option">
+                      <input type="radio" name="content-creation" id="cc-mixed" value="mixed">
+                      <label for="cc-mixed" class="cfg-option-label"><span class="cfg-option-name">Mixto</span></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="cfg-suboption-group">
+                  <span class="cfg-suboption-label">Gestión continua</span>
+                  <div class="cfg-check-group" data-field="content-retainer">
+                    <div class="cfg-option">
+                      <input type="checkbox" name="content-ret" id="content-retainer" value="retainer_mensual">
+                      <label for="content-retainer" class="cfg-option-label"><span class="cfg-option-name">Retainer mensual de gestión</span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== STEP 3: Línea de Tiempo ===== -->
+      <section class="cfg-step" data-step="3" data-step-id="timeline">
+        <div class="col-md">
+          <span class="cfg-step-label">03 / 05</span>
+          <h2 class="cfg-step-title">¿Cuándo le gustaría comenzar?</h2>
+          <p class="cfg-step-desc">Esto nos ayuda a planear la capacidad y asignar recursos.</p>
+
+          <div class="cfg-field">
+            <label class="cfg-label">Fecha de inicio deseada</label>
+            <div class="cfg-radio-group" data-field="timeline">
+              <div class="cfg-option">
+                <input type="radio" name="timeline" id="tl-asap" value="asap">
+                <label for="tl-asap" class="cfg-option-label"><span class="cfg-option-name">Lo antes posible</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="timeline" id="tl-2-4" value="2-4weeks">
+                <label for="tl-2-4" class="cfg-option-label"><span class="cfg-option-name">En 2–4 semanas</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="timeline" id="tl-1-2m" value="1-2months">
+                <label for="tl-1-2m" class="cfg-option-label"><span class="cfg-option-name">En 1–2 meses</span></label>
+              </div>
+              <div class="cfg-option">
+                <input type="radio" name="timeline" id="tl-flex" value="flexible">
+                <label for="tl-flex" class="cfg-option-label"><span class="cfg-option-name">Flexible</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="cfg-field">
+            <label class="cfg-label" for="priority-module">¿Qué módulo es el más crítico para usted?</label>
+            <select id="priority-module" class="cfg-select" data-field="priority">
+              <option value="" disabled selected>Seleccione el módulo prioritario</option>
+              <!-- Options populated dynamically by configurador.js based on active modules -->
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== STEP 4: Datos de Contacto ===== -->
+      <section class="cfg-step" data-step="4" data-step-id="contact">
+        <div class="col-md">
+          <span class="cfg-step-label">04 / 05</span>
+          <h2 class="cfg-step-title">Datos de contacto</h2>
+          <p class="cfg-step-desc">Para generar su propuesta personalizada.</p>
+
+          <div class="cfg-field">
+            <label class="cfg-label" for="client-name">Nombre completo</label>
+            <input type="text" id="client-name" class="cfg-input" data-field="clientName" placeholder="Nombre y apellido" required>
+          </div>
+
+          <div class="cfg-field">
+            <label class="cfg-label" for="client-email">Email</label>
+            <input type="email" id="client-email" class="cfg-input" data-field="clientEmail" placeholder="correo@empresa.com" required>
+          </div>
+
+          <div class="cfg-field">
+            <label class="cfg-label" for="client-phone">Teléfono</label>
+            <input type="tel" id="client-phone" class="cfg-input" data-field="clientPhone" placeholder="+52 999 123 4567">
+          </div>
+
+          <div class="cfg-field">
+            <label class="cfg-label">Empresa</label>
+            <p class="cfg-summary-included" id="contact-company-display"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== STEP 5: Resumen y Propuesta ===== -->
+      <section class="cfg-step" data-step="5" data-step-id="summary">
+        <div class="col-wide">
+          <span class="cfg-step-label">05 / 05</span>
+          <h2 class="cfg-step-title">Su propuesta</h2>
+          <p class="cfg-step-desc">Revisión completa de su configuración con inversión detallada.</p>
+
+          <div id="cfg-summary">
+            <!-- Dynamically rendered by configurador.js -->
+          </div>
+
+          <div class="cfg-actions">
+            <button class="btn btn-primary" id="cfg-download-pdf">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Descargar Propuesta (PDF)
+            </button>
+            <button class="btn btn-secondary" id="cfg-pay">
+              Proceder al Pago
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Navigation Bar -->
+  <div class="cfg-nav" id="cfg-nav">
+    <div class="cfg-nav-inner">
+      <button class="btn btn-secondary" id="cfg-back" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Atrás
+      </button>
+      <button class="btn btn-primary" id="cfg-next">
+        Siguiente
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- PDF Template (hidden, rendered by html2canvas) -->
+  <div class="cfg-pdf-template" id="pdf-template" aria-hidden="true">
+    <!-- Populated dynamically by configurador.js -->
+  </div>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4/dist/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5/dist/jspdf.umd.min.js"></script>
+  <script src="app.js" defer></script>
+  <script src="configurador.js" defer></script>
+</body>
+</html>

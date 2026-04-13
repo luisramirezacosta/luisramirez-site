@@ -531,10 +531,10 @@ a { color: inherit; text-decoration: none; }
 .hw-name[data-animate], .hw-tagline[data-animate], .hw-specs[data-animate] { opacity: 0; transform: translateX(20px); }
 .setup-intro[data-animate] { opacity: 0; transform: translateY(20px); }
 
-/* Servicios: fade up */
-#servicios .setup-intro[data-animate] { opacity: 0; transform: translateY(20px); }
-.service-card-featured[data-animate] { opacity: 0; transform: translateY(24px); }
-.service-card[data-animate] { opacity: 0; transform: translateY(20px) scale(0.97); }
+/* Servicios (Configurador): fade up */
+#servicios .cfg-landing-title[data-animate] { opacity: 0; transform: translateY(20px); }
+#servicios .cfg-landing-desc[data-animate] { opacity: 0; transform: translateY(20px); }
+.cfg-package-card[data-animate] { opacity: 0; transform: translateY(20px) scale(0.97); }
 
 /* Trayectoria: fade up */
 #trayectoria .writing-note[data-animate] { opacity: 0; transform: translateY(20px); }

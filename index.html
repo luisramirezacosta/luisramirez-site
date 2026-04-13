@@ -42,6 +42,7 @@
   <link rel="icon" href="./vitruvian.svg" type="image/svg+xml">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="configurador.css">
 
   <script type="application/ld+json">
   {
@@ -161,84 +162,44 @@
       </div>
     </section>
 
-    <!-- ===== SERVICIOS ===== -->
+    <!-- ===== SERVICIOS (Configurador) ===== -->
     <section id="servicios" class="section section-servicios">
+      <div class="col-md">
+        <span class="section-label">Configurador</span>
+        <h2 class="cfg-landing-title" data-animate>¿Cuál es su necesidad principal?</h2>
+        <p class="cfg-landing-desc" data-animate>Seleccione un paquete para configurar su propuesta personalizada.</p>
+      </div>
       <div class="col-wide">
-        <span class="section-label">Servicios</span>
-        <p class="setup-intro" data-animate>Lo que entrego.</p>
+        <div class="cfg-package-grid">
 
-        <!-- Featured service -->
-        <div class="service-card-featured card" data-animate>
-          <div class="work-role">Arquitecto & Líder Técnico</div>
-          <h3 class="work-title">Desarrollo de Software a la Medida</h3>
-          <p class="work-desc">Sistemas hechos a la medida de su operación. Aplicaciones, plataformas internas, portales de clientes y herramientas operativas que no existen en el mercado, diseñadas específicamente para cómo trabaja su negocio. Desde el diseño hasta la implementación, con soporte continuo.</p>
-          <div class="service-meta">
-            <div class="spec-row"><span class="spec-key">Entregable</span><span class="spec-dots"></span><span class="spec-val">Software funcional en producción</span></div>
-            <div class="spec-row"><span class="spec-key">Tiempo</span><span class="spec-dots"></span><span class="spec-val">Indefinido — desarrollo continuo según necesidades</span></div>
-          </div>
-        </div>
+          <!-- Package 1: Infraestructura Digital -->
+          <a href="configurador-infraestructura.html" class="cfg-package-card card" data-animate>
+            <div class="work-role">Proyecto</div>
+            <h3 class="cfg-package-name">Infraestructura Digital Empresarial</h3>
+            <p class="cfg-package-desc">Todo lo que su negocio necesita para competir en digital. Módulos configurables, entrega en semanas.</p>
+            <ul class="cfg-package-bullets">
+              <li>Estrategia digital y hoja de ruta</li>
+              <li>Sitio web profesional</li>
+              <li>Google, CRM y automatizaciones</li>
+              <li>Redes sociales y contenido</li>
+            </ul>
+            <span class="work-indicator">Configurar &#8599;</span>
+          </a>
 
-        <!-- Service grid -->
-        <div class="service-grid">
-          <div class="service-card card" data-animate>
-            <div class="work-role">Estratega</div>
-            <h3 class="service-title">Estrategia Digital & Hoja de Ruta</h3>
-            <p class="service-desc">Audito su presencia digital actual, identifico las brechas y construyo un plan por fases adaptado a su presupuesto y objetivos. Usted obtiene una hoja de ruta clara y ejecutable, no una presentación llena de tecnicismos.</p>
-            <div class="service-meta">
-              <span class="service-tag">Plan de transformación digital</span>
-              <span class="service-tag service-tag-time">1–2 semanas</span>
-            </div>
-          </div>
+          <!-- Package 2: Software Continuo -->
+          <a href="configurador-software.html" class="cfg-package-card card" data-animate>
+            <div class="work-role">Continuo</div>
+            <h3 class="cfg-package-name">Desarrollo Continuo de Software</h3>
+            <p class="cfg-package-desc">Software hecho a la medida de su operación. Retainer mensual con desarrollo, soporte y evolución continua.</p>
+            <ul class="cfg-package-bullets">
+              <li>Herramientas internas y portales</li>
+              <li>Dashboards y plataformas</li>
+              <li>Integraciones API</li>
+              <li>Soporte y mantenimiento continuo</li>
+            </ul>
+            <span class="work-indicator">Configurar &#8599;</span>
+          </a>
 
-          <div class="service-card card" data-animate>
-            <div class="work-role">Arquitecto & Líder</div>
-            <h3 class="service-title">Diseño & Desarrollo Web</h3>
-            <p class="service-desc">Desde sitios profesionales de una página hasta plataformas completas con blog, galería y sistema de citas. Construido para posicionar en Google y convertir visitantes en clientes.</p>
-            <div class="service-meta">
-              <span class="service-tag">Sitio listo para producción</span>
-              <span class="service-tag service-tag-time">2–4 semanas</span>
-            </div>
-          </div>
-
-          <div class="service-card card" data-animate>
-            <div class="work-role">Estratega & Ejecutor</div>
-            <h3 class="service-title">Ecosistema Google</h3>
-            <p class="service-desc">Google Business Profile, Workspace (correo profesional), Analytics, Search Console y Ads. Todo configurado para que su negocio aparezca cuando alguien busca lo que usted ofrece.</p>
-            <div class="service-meta">
-              <span class="service-tag">Presencia completa en Google</span>
-              <span class="service-tag service-tag-time">1–2 semanas</span>
-            </div>
-          </div>
-
-          <div class="service-card card" data-animate>
-            <div class="work-role">Arquitecto</div>
-            <h3 class="service-title">CRM & Pipeline de Clientes</h3>
-            <p class="service-desc">Un sistema para rastrear cada prospecto, dar seguimiento automático y no perder oportunidades de venta. Construido sobre HubSpot o soluciones a medida según su escala.</p>
-            <div class="service-meta">
-              <span class="service-tag">Pipeline operativo de clientes</span>
-              <span class="service-tag service-tag-time">1–3 semanas</span>
-            </div>
-          </div>
-
-          <div class="service-card card" data-animate>
-            <div class="work-role">Arquitecto de Sistemas</div>
-            <h3 class="service-title">Automatización & Flujos de Trabajo</h3>
-            <p class="service-desc">Conecto sus herramientas para que se comuniquen entre sí. Un nuevo formulario crea un registro en el CRM, envía un correo de confirmación y agenda una cita — sin intervención manual.</p>
-            <div class="service-meta">
-              <span class="service-tag">Flujos de trabajo automatizados</span>
-              <span class="service-tag service-tag-time">1–2 semanas</span>
-            </div>
-          </div>
-
-          <div class="service-card card" data-animate>
-            <div class="work-role">Estratega</div>
-            <h3 class="service-title">Redes Sociales & Contenido</h3>
-            <p class="service-desc">Creación de canales, calendario de contenido y estrategia de publicación diseñada para su industria. Yo construyo el sistema — usted o su equipo lo alimentan con contenido, o también nos encargamos de eso.</p>
-            <div class="service-meta">
-              <span class="service-tag">Infraestructura de contenido</span>
-              <span class="service-tag service-tag-time">2–3 semanas</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

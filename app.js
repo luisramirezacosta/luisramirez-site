@@ -215,17 +215,17 @@
       y: 0, opacity: 1, duration: 0.6, stagger: 0.15
     });
 
-    // Servicios: cards fade up staggered
-    animateSection('#servicios', '.setup-intro[data-animate]', {
+    // Servicios (Configurador): title, desc, and package cards fade up
+    animateSection('#servicios', '.cfg-landing-title[data-animate]', {
       y: 0, opacity: 1, duration: 0.5
     });
-    animateSection('#servicios', '.service-card-featured[data-animate]', {
-      y: 0, opacity: 1, duration: 0.6
+    animateSection('#servicios', '.cfg-landing-desc[data-animate]', {
+      y: 0, opacity: 1, duration: 0.5
     });
-    var servicioCards = document.querySelectorAll('#servicios .service-grid [data-animate]');
-    if (servicioCards.length) {
-      gsap.to(servicioCards, {
-        scrollTrigger: { trigger: '#servicios .service-grid', start: 'top 85%', once: true },
+    var packageCards = document.querySelectorAll('#servicios .cfg-package-grid [data-animate]');
+    if (packageCards.length) {
+      gsap.to(packageCards, {
+        scrollTrigger: { trigger: '#servicios .cfg-package-grid', start: 'top 85%', once: true },
         opacity: 1, y: 0, scale: 1, duration: 0.5, ease: 'power2.out', stagger: 0.08
       });
     }

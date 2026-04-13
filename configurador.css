@@ -1,0 +1,804 @@
+/* ============================================
+   Configurador (CPQ) — luisracosta.com
+   All styles for the service configurator.
+   Uses design tokens from style.css (:root).
+   ============================================ */
+
+/* ── Progress Bar ────────────────────────── */
+
+.cfg-progress {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 3px; z-index: 101;
+  background: var(--border);
+}
+.cfg-progress-fill {
+  height: 100%; width: 0%;
+  background: var(--text);
+}
+
+/* ── Package Selection Landing ───────────── */
+
+.cfg-landing {
+  padding: 120px 0 80px;
+}
+.cfg-landing-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 1rem + 2vw, 2.4rem);
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.cfg-landing-desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 48px;
+}
+
+.cfg-package-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.cfg-package-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  cursor: pointer;
+}
+.cfg-package-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.cfg-package-desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  flex: 1;
+}
+.cfg-package-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+.cfg-package-bullets li {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-2);
+  padding: 4px 0;
+  line-height: 1.5;
+}
+.cfg-package-bullets li::before {
+  content: '\2192\00a0';
+  color: var(--text-faint);
+}
+
+/* ── Homepage CTA Card ───────────────────── */
+
+.cfg-cta-card {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px;
+  border-style: dashed;
+  cursor: pointer;
+}
+.cfg-cta-card:hover {
+  border-style: solid;
+}
+.cfg-cta-title {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.cfg-cta-desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.cfg-cta-arrow {
+  font-size: 20px;
+  color: var(--text-faint);
+  transition: color 180ms var(--ease), transform 180ms var(--ease);
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+.cfg-cta-card:hover .cfg-cta-arrow {
+  color: var(--text);
+  transform: translate(2px, -2px);
+}
+
+/* ── Stepper Container ───────────────────── */
+
+.cfg-stepper {
+  position: relative;
+  min-height: 100vh;
+}
+
+.cfg-step {
+  display: none;
+  min-height: calc(100vh - 120px);
+  min-height: calc(100dvh - 120px);
+  padding: 80px 0 40px;
+}
+.cfg-step-active {
+  display: block;
+}
+
+/* ── Step Headers ────────────────────────── */
+
+.cfg-step-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 16px;
+}
+
+.cfg-step-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 1rem + 1.5vw, 2.2rem);
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+
+.cfg-step-desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* ── Form Fields ─────────────────────────── */
+
+.cfg-field {
+  margin-bottom: 20px;
+}
+
+.cfg-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-2);
+  margin-bottom: 8px;
+}
+
+.cfg-input,
+.cfg-select,
+.cfg-textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--text);
+  outline: none;
+  transition: border-color 180ms ease;
+}
+.cfg-input:focus,
+.cfg-select:focus,
+.cfg-textarea:focus {
+  border-color: var(--text-muted);
+}
+.cfg-input::placeholder,
+.cfg-textarea::placeholder {
+  color: var(--text-faint);
+}
+
+.cfg-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23737373' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.cfg-textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+
+/* ── Radio Cards (single select) ─────────── */
+
+.cfg-radio-group,
+.cfg-check-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cfg-radio-group--grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.cfg-option input[type="radio"],
+.cfg-option input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.cfg-option-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 180ms var(--ease), background 180ms var(--ease);
+  gap: 12px;
+}
+.cfg-option-label:hover {
+  border-color: var(--border-hover);
+}
+
+.cfg-option input:checked + .cfg-option-label {
+  border-color: var(--text);
+  background: var(--surface);
+}
+
+.cfg-option-name {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text);
+}
+.cfg-option-detail {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.cfg-option-meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-faint);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Multi-select Checkboxes ─────────────── */
+
+.cfg-check-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.cfg-option input[type="checkbox"] + .cfg-option-label::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  flex-shrink: 0;
+  transition: background 180ms var(--ease), border-color 180ms var(--ease);
+}
+.cfg-option input[type="checkbox"]:checked + .cfg-option-label::before {
+  background: var(--text);
+  border-color: var(--text);
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5L4.5 8.5L11 1.5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+[data-theme="dark"] .cfg-option input[type="checkbox"]:checked + .cfg-option-label::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5L4.5 8.5L11 1.5' stroke='%230A0A0A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.cfg-option input[type="checkbox"] + .cfg-option-label {
+  justify-content: flex-start;
+}
+
+/* ── Module Toggle Cards ─────────────────── */
+
+.cfg-modules {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cfg-module {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px 24px;
+  transition: border-color 180ms var(--ease);
+}
+.cfg-module.cfg-module-active {
+  border-color: var(--text);
+}
+
+.cfg-module-locked {
+  border-style: dashed;
+}
+
+.cfg-module-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.cfg-module-info { flex: 1; min-width: 0; }
+
+.cfg-module-name {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.cfg-module-time {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.cfg-module-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-faint);
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Toggle Switch ───────────────────────── */
+
+.cfg-toggle {
+  width: 44px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.cfg-toggle-track {
+  display: block;
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: var(--border);
+  position: relative;
+  transition: background 180ms var(--ease);
+}
+
+.cfg-toggle[aria-pressed="true"] .cfg-toggle-track {
+  background: var(--text);
+}
+
+.cfg-toggle-thumb {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--bg);
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: transform 180ms var(--ease);
+}
+
+.cfg-toggle[aria-pressed="true"] .cfg-toggle-thumb {
+  transform: translateX(20px);
+}
+
+/* ── Sub-options (expanded under modules) ── */
+
+.cfg-suboptions {
+  padding: 20px 0 0;
+  overflow: hidden;
+}
+
+.cfg-suboption-group {
+  margin-bottom: 16px;
+}
+
+.cfg-suboption-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* ── Yes/No Pill Toggles ─────────────────── */
+
+.cfg-pill-group {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cfg-pill input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.cfg-pill-label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: background 180ms var(--ease), color 180ms var(--ease);
+  border-right: 1px solid var(--border);
+}
+.cfg-pill-label:last-of-type {
+  border-right: none;
+}
+
+.cfg-pill input:checked + .cfg-pill-label {
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* ── Number Stepper ──────────────────────── */
+
+.cfg-stepper-input {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cfg-stepper-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--text-muted);
+  background: var(--card);
+  border: none;
+  cursor: pointer;
+  transition: background 180ms var(--ease), color 180ms var(--ease);
+}
+.cfg-stepper-btn:hover {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.cfg-stepper-value {
+  width: 48px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text);
+  border: none;
+  background: var(--card);
+  outline: none;
+}
+
+/* ── Navigation Bar (fixed bottom) ───────── */
+
+.cfg-nav {
+  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  z-index: 100;
+  transition: background 200ms ease;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  -webkit-padding-after: env(safe-area-inset-bottom, 0px);
+}
+
+.cfg-nav-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cfg-nav .btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* ── Summary Section ─────────────────────── */
+
+.cfg-summary-section {
+  margin-bottom: 32px;
+}
+
+.cfg-summary-heading {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 16px;
+}
+
+.cfg-summary-totals {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+.cfg-summary-total-row {
+  font-weight: 500;
+}
+
+.cfg-summary-nudge {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 8px;
+}
+
+.cfg-summary-included {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+/* ── Summary Action Buttons ──────────────── */
+
+.cfg-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+/* ── Software Package Layout ─────────────── */
+
+.cfg-software-contact-summary {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 8px;
+}
+
+.cfg-summary-desc {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: 8px;
+  padding: 12px 16px;
+  background: var(--surface);
+  border-radius: 8px;
+}
+
+/* ── Timeline Estimate ───────────────────── */
+
+.cfg-timeline-estimate {
+  margin-top: 24px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border-radius: 10px;
+}
+
+.cfg-timeline-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 4px;
+}
+
+.cfg-timeline-value {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* ── PDF Template (hidden, for html2canvas) ── */
+
+.cfg-pdf-template {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  width: 794px; /* A4 at 96dpi */
+  background: #FFFFFF;
+  color: #0A0A0A;
+}
+
+.cfg-pdf-page {
+  width: 794px;
+  min-height: 1123px; /* A4 height at 96dpi */
+  padding: 80px;
+  box-sizing: border-box;
+  position: relative;
+  page-break-after: always;
+}
+
+.cfg-pdf-cover-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 400;
+  color: #0A0A0A;
+}
+
+.cfg-pdf-cover-client {
+  font-family: var(--font-body);
+  font-size: 20px;
+  color: #525252;
+}
+
+.cfg-pdf-section-header {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #A3A3A3;
+  margin-bottom: 24px;
+}
+
+.cfg-pdf-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #A3A3A3;
+}
+
+.cfg-pdf-total {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 500;
+  color: #0A0A0A;
+}
+
+/* Force light mode colors inside PDF template */
+.cfg-pdf-template .spec-row {
+  color: #525252;
+}
+.cfg-pdf-template .spec-key {
+  color: #525252;
+}
+.cfg-pdf-template .spec-val {
+  color: #525252;
+}
+.cfg-pdf-template .spec-dots {
+  border-bottom-color: #E5E5E5;
+}
+.cfg-pdf-template .spec-highlight {
+  color: #0A0A0A;
+}
+
+/* ============================================
+   RESPONSIVE — Tablet
+   ============================================ */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cfg-package-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cfg-radio-group--grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cfg-check-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   RESPONSIVE — Mobile (max 768px)
+   ============================================ */
+
+@media (max-width: 768px) {
+  .cfg-landing {
+    padding: 80px 0 64px;
+  }
+
+  .cfg-package-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cfg-step {
+    min-height: auto;
+    min-height: calc(100dvh - 120px);
+    padding: 64px 0 24px;
+  }
+
+  .cfg-step-desc {
+    margin-bottom: 28px;
+  }
+
+  .cfg-radio-group--grid,
+  .cfg-check-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cfg-module {
+    padding: 16px 20px;
+  }
+
+  .cfg-module-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .cfg-nav-inner {
+    padding: 12px 20px;
+  }
+
+  .cfg-actions {
+    flex-direction: column;
+  }
+  .cfg-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cfg-cta-card {
+    padding: 20px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE — Small phones (max 480px)
+   ============================================ */
+
+@media (max-width: 480px) {
+  .cfg-landing {
+    padding: 64px 0 48px;
+  }
+
+  .cfg-package-card {
+    padding: 20px;
+  }
+
+  .cfg-module-name {
+    font-size: 14px;
+  }
+}
