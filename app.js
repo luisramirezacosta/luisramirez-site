@@ -231,7 +231,7 @@
     }
 
     // Trayectoria: timeline entries fade up staggered
-    animateSection('#trayectoria', '.setup-intro[data-animate]', {
+    animateSection('#trayectoria', '.writing-note[data-animate]', {
       y: 0, opacity: 1, duration: 0.5
     });
     animateSection('#trayectoria', '.timeline-entry[data-animate]', {
