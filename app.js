@@ -132,7 +132,7 @@
     });
 
     var links = document.querySelectorAll('.nav-link');
-    var sections = ['about', 'setup', 'work', 'writing', 'newsletter'];
+    var sections = ['about', 'servicios', 'setup', 'work', 'trayectoria', 'writing', 'newsletter'];
 
     sections.forEach(function (id) {
       var section = document.getElementById(id);
@@ -213,6 +213,29 @@
     // About: paragraphs fade up staggered
     animateSection('#about', '[data-animate]', {
       y: 0, opacity: 1, duration: 0.6, stagger: 0.15
+    });
+
+    // Servicios: cards fade up staggered
+    animateSection('#servicios', '.setup-intro[data-animate]', {
+      y: 0, opacity: 1, duration: 0.5
+    });
+    animateSection('#servicios', '.service-card-featured[data-animate]', {
+      y: 0, opacity: 1, duration: 0.6
+    });
+    var servicioCards = document.querySelectorAll('#servicios .service-grid [data-animate]');
+    if (servicioCards.length) {
+      gsap.to(servicioCards, {
+        scrollTrigger: { trigger: '#servicios .service-grid', start: 'top 85%', once: true },
+        opacity: 1, y: 0, scale: 1, duration: 0.5, ease: 'power2.out', stagger: 0.08
+      });
+    }
+
+    // Trayectoria: timeline entries fade up staggered
+    animateSection('#trayectoria', '.setup-intro[data-animate]', {
+      y: 0, opacity: 1, duration: 0.5
+    });
+    animateSection('#trayectoria', '.timeline-entry[data-animate]', {
+      y: 0, opacity: 1, duration: 0.6, stagger: 0.12
     });
 
     // Setup intro
